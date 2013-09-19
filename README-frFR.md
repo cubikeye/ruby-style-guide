@@ -75,7 +75,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
 * [Classes](#classes)
 * [Exceptions](#exceptions)
 * [Collections](#collections)
-* [Chaines de caractères](#chaines-de-caractères)
+* [Chaînes de caractères](#chaines-de-caractères)
 * [Expressions rationnelles](#expressions-rationnelles)
 * [Notations pourcents](#notations-pourcents)
 * [Méta-programmation](#méta-programmation)
@@ -106,7 +106,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
 * Utilisez des fins de ligne de type Unix. (*Les utilisateurs BSD/Solaris/Linux/OSX sont couverts par défaut,
   les utilisateurs Windows doivent faire très attention.)
     * Si vous utilisez Git, vous pouvez ajouter les paramètres de configuration
-    suivants pour protéger votre projet des fins de ligne Windows qui traineraient:
+    suivants pour protéger votre projet des fins de ligne Windows qui traîneraient:
 
         $ git config --global core.autocrlf true
 
@@ -139,7 +139,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
     ```
 
 * Indenter `when` au même niveau que `case`. Je sais que beaucoup
-  seront en désaccord avec cette règle, but c'est un style établi
+  seront en désaccord avec cette règle, mais c'est un style établi
   dans "The Ruby Programming Language" et "Programming Ruby".
 
     ```Ruby
@@ -164,7 +164,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
            end
     ```
 
-* Passez des ligne entre les `def` et pour diviser la méthode en paragraphes
+* Passez des lignes entre les `def` pour diviser la méthode en paragraphes
   logiques.
 
     ```Ruby
@@ -479,7 +479,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
     end.map { |name| name.upcase }
     ```
 
-    Certains prétendront que les enchainement multi-lignes ont une bonne apparence en utilisant {...},
+    Certains prétendront que les enchainements multi-lignes ont une bonne apparence en utilisant {...},
     mais ils devraient se demander - est-ce que ce code est vraiment lisible et est-ce que le contenu
     des blocs peut être extrait dans des méthodes efficaces?
 
@@ -817,7 +817,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
 * Utilisez `OPTIMIZE` pour signaler un code lent ou inefficace pouvant poser
   des problèmes de performance.
 * Utilisez `HACK` pour signaler un code qui semble être issu de pratiques
-  d'écriture douteuxes qui devrait être refactorisé.
+  d'écriture douteuses qui devrait être refactorisé.
 * Utilisez `REVIEW` pout signaler toute chose devant être vérifiée pour confirmer
   qu'elle fonctionne comme prévu. Par exemple: `REVIEW: Are we sure this is how the
   client does X currently?`
@@ -881,7 +881,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
     ```
 
 * Pensez à utiliser `Struct.new`, qui définit les accesseurs triviaux,
-  constructeur et operateurs de comparaison pour vous.
+  constructeurs et operateurs de comparaison pour vous.
 
     ```Ruby
     # bien
@@ -1212,7 +1212,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
     end
     ```
 
-* Privilégiez l'utilisation d'exception standards plutôt que
+* Privilégiez l'utilisation d'exceptions standards plutôt que
   d'introduire de nouvelles classes d'exception.
 
 ## Collections
@@ -1263,7 +1263,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
     hash = { one: 1, two: 2, three: 3 }
     ```
 
-* Evitez d'utilisez des objets modifialbes comme clés de hash.
+* Evitez d'utiliser des objets modifiables comme clés de hash.
 * Privilégiez la nouvelle notation hash en Ruby 1.9 lorsque vos clés sont des symboles.
 
     ```Ruby
@@ -1290,9 +1290,9 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
 * Basez-vous sur le fait que les hash en Ruby 1.9 sont ordonnés.
 * Ne jamais modifier une collection en la parcourant.
 
-## Chaines de caractères
+## Chaînes de caractères
 
-* Privilégiez l'interpolation de chaine plutôt que la concaténation:
+* Privilégiez l'interpolation de chaîne plutôt que la concaténation:
 
     ```Ruby
     # mauvais
@@ -1303,13 +1303,13 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
     ```
 
 * Pensez à entourer le code interpolé d'un espace. Cela permet de mieux
-  distinguer le code de la chaine de caractères.
+  distinguer le code de la chaîne de caractères.
 
     ```Ruby
     "#{ user.last_name }, #{ user.first_name }"
     ```
 
-* Privilégiez les chaine à guillemets simples lorsque vous n'utilisez pas
+* Privilégiez les chaîne à guillemets simples lorsque vous n'utilisez pas
   d'interpolation ou de caractères spéciaux comme `\t`, `\n`, `'`, etc.
 
     ```Ruby
@@ -1321,7 +1321,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
     ```
 
 * N'utilisez pas `{}` autour des variables d'instance interpolées dans
-  une chaine.
+  une chaîne.
 
     ```Ruby
     class Person
@@ -1344,8 +1344,8 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
     end
     ```
 
-* Evitez d'utiliser `String#+` pour assembler de longues chaines de caractères.
-  Utilisez plutôt `String#<<` qui transforme la chaine sur place et s'avère
+* Evitez d'utiliser `String#+` pour assembler de longues chaînes de caractères.
+  Utilisez plutôt `String#<<` qui transforme la chaîne sur place et s'avère
   toujours plus rapide que `String#+`, qui crée beaucoup de nouveaux objets.
 
     ```Ruby
@@ -1366,9 +1366,9 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
 > -- Jamie Zawinski
 
 * N'utilisez pas d'expression rationnelle pour une simple recherche de texte
-  en clair dans une chaine de caractères: `string['text']`
+  en clair dans une chaîne de caractères: `string['text']`
 * Pour des situations simples, vous pouvez utiliser la regexp directement
-  dans l'index de chaine.
+  dans l'index de chaîne.
 
     ```Ruby
     match = string[/regexp/]             # récupère le contenu correspondant à la regexp
@@ -1404,8 +1404,8 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
   `.` ou les crochets dans `[]`.
 
 * Faites attention avec `^` et `$` car ils correspondent aux débuts et
-  fins de lignes, pas de la chaine.
-  Si vous cherchez une correspondance avec la chaine entière, utilisez
+  fins de lignes, pas de la chaîne.
+  Si vous cherchez une correspondance avec la chaîne entière, utilisez
   `\A` et `\z` (à ne pas confondre avec `\Z` qui est l'équivalent de `/\n?\z/`).
 
     ```Ruby
@@ -1439,8 +1439,8 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
     STATES = %w(draft open closed)
     ```
 
-* Utilisez `%()` pour les chaines à simple ligne qui nécessitent à la fois
-  une interpolation et l'inclusion de doubles guillemets. Pour les chaines
+* Utilisez `%()` pour les chaînes à simple ligne qui nécessitent à la fois
+  une interpolation et l'inclusion de doubles guillemets. Pour les chaînes
   multi-lignes, privilégiez les heredocs.
 
     ```Ruby
@@ -1485,8 +1485,8 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
 * Ne modifiez pas le comportement des classes du noyau lorsque vous écrivez des librairies.
   (Ne leur appliquez pas de "monkey-patch")
 
-* La forme de bloc de `class_eval` est préférable à la form de chaine interpolée.
-  - Quand vous utilisez une chaine interpolée, fournissez toujours `__FILE__` et `__LINE__`,
+* La forme de bloc de `class_eval` est préférable à la form de chaîne interpolée.
+  - Quand vous utilisez une chaîne interpolée, fournissez toujours `__FILE__` et `__LINE__`,
     de sorte que vos piles d'exécution aient du sens:
 
     ```ruby
@@ -1495,7 +1495,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
 
   - `define_method` est préférable à `class_eval{ def ... }`
 
-* Lorsque vous utilisez `class_eval` (ou tout autre `eval`) avec une chaine interpolée,
+* Lorsque vous utilisez `class_eval` (ou tout autre `eval`) avec une chaîne interpolée,
   ajoutez un bloc de commentaire montrant son apparence une fois interpolée (c'est une
   pratique que j'ai apprise dans le code source de Rails):
 
@@ -1523,8 +1523,8 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
   Pensez à utiliser la délégation, la procuration ou `define_method` à la place. Si vous devez
   vraiment utiliser `method_missing`:
   - [Définissez également `respond_to_missing?`](http://blog.marc-andre.ca/2010/11/methodmissing-politely.html)
-  - Interceptez seulement les méthodes comportant un préfix bien défini, comme `find_by_*` -- rendez votre code aussi robuste que possible.
-  - Appelez `super` a la fin de votre traitement.
+  - Interceptez seulement les méthodes comportant un préfixe bien défini, comme `find_by_*` -- rendez votre code aussi robuste que possible.
+  - Appelez `super` à la fin de votre traitement.
   - Déléguez vers des méthodes robustes et non-magiques:
 
     ```ruby
@@ -1553,7 +1553,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
 ## Divers
 
 * Ecrivez du code ruby sécurisé grace à `ruby -w`.
-* Evitez les hashs comme paramètres optionnels. La methode n'en ferait-elle pas trop ?
+* Evitez les hashs comme paramètres optionnels. La méthode n'en ferait-elle pas trop ?
 * Evitez les méthodes de plus de 10 lignes de code (sans compter les lignes vides).
   Idéalement, la plupart des méthodes devraient faire moins de 5 lignes.
 * Evitez les listes de paramètres plus longues que trois ou quatre paramètres.
@@ -1586,7 +1586,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
 # Contribuer
 
 Rien de ce qui est écrit dans ce guide n'est gravé dans le marbre. Mon
-but est que nous travaillions ensemble avec toutes les personnes intéressés
+but est que nous travaillions ensemble avec toutes les personnes intéressées
 par le style de programmation Ruby, de telle sorte que nous puissions créer
 une ressource qui serait bénéfique à l'ensemble de la communauté Ruby.
 
