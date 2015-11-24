@@ -644,7 +644,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
 * La nouvelle syntaxe lambda est à privilégier en Ruby 1.9.
 
     ```Ruby
-    # mauais
+    # mauvais
     lambda = lambda { |a, b| a + b }
     lambda.call(1, 2)
 
