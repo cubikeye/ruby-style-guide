@@ -592,7 +592,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
     if (v = self.next_value) == 'hello' ...
     ```
 
-* Utilisez `||=` à vonlonté pour initialiser les variables.
+* Utilisez `||=` à volonté pour initialiser les variables.
 
     ```Ruby
     # définit Bozhidar comme nom, seulement s'il vaut nil ou false
@@ -1433,7 +1433,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
 
 ## Notations pourcents
 
-* Utilisez `%w` à vonlonté.
+* Utilisez `%w` à volonté.
 
     ```Ruby
     STATES = %w(draft open closed)
