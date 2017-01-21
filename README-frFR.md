@@ -14,7 +14,7 @@ tout à fait capables de produire ce document convoité.
 Ce guide (écrit par votre serviteur) a vu le jour en tant que convention de
 programmation Ruby interne à notre entreprise. Au bout d'un certain temps,
 il m'a semblé que ce travail pourrait s'avérer intéressant pour les membres
-de la communauté ruby en général et que le monde n'avait pas vraiment besoin
+de la communauté Ruby en général et que le monde n'avait pas vraiment besoin
 d'une convention de programmation interne de plus. Mais le monde pourrait
 certainement tirer profit d'un ensemble de pratiques, d'idiomes et de conseils
 de style pour la programmation Ruby.
@@ -83,8 +83,8 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
 
 ## Structure du code source
 
-> Chacun de nous ou presque est convaincu que tous les styles sauf le notre sont
-> moches et illisibles. Retirez "sauf le notre" et nous aurons probablement
+> Chacun de nous ou presque est convaincu que tous les styles sauf le nôtre sont
+> moches et illisibles. Retirez "sauf le nôtre" et nous aurons probablement
 > raison... <br/>
 > -- Jerry Coffin (à propos de l'indentation)
 
@@ -121,7 +121,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
     [1, 2, 3].each { |e| puts e }
     ```
 
-    L'opérateur d'exposant est la seule exception:
+    L'opérateur d'exposant est la seule exception :
 
     ```Ruby
     # mauvais
@@ -322,8 +322,8 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
 
 * N'utilisez jamais `when x; ...`. Voir règle précédente.
 
-* Utilisez `&&/||` pour les expressions booléennes, `and/or` pour le flux de contrôle.
-  (Règle d'or: Si vous devez mettre des parenthèses exterieures, vous utilisez les
+* Utilisez `&&`/`||` pour les expressions booléennes, `and`/`or` pour le flux de contrôle.
+  (Règle d'or : si vous devez mettre des parenthèses exterieures, vous utilisez les
   mauvais opérateurs.)
 
     ```Ruby
@@ -432,8 +432,8 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
     ```
 
 * Omettez les parenthèses pour les méthodes qui font partie d'un DSL
-  (Domain Specific Langage - ex: Rake, Rails, RSpec), qui ont un statut
-  de "mot clé" en Ruby (ex: `attr_reader`, `puts`) et les méthodes d'accès
+  (Domain Specific Langage - ex : Rake, Rails, RSpec), qui ont un statut
+  de "mot clé" en Ruby (ex : `attr_reader`, `puts`) et les méthodes d'accès
   à des attributs. Utilisez les parenthèses autour des arguments de toutes
   les autres invocations de méthodes.
 
@@ -453,11 +453,11 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
     array.delete(e)
     ```
 
-* Privilégiez `{...}` plutôt que `do...end` pour les blocs sur simple ligne.
-  Evitez l'utilisation de `{...}` pour les blocs multi-lignes (les enchainements
+* Privilégiez `{...}` plutôt que `do...end` pour les blocs sur une seule ligne.
+  Evitez l'utilisation de `{...}` pour les blocs multi-lignes (les enchaînements
   multi-lignes sont toujours moches). Utilisez toujours `do...end` pour le
-  "flux de contrôle" et les "définitions de méthodes" (ex: dans les Rakefiles
-  et certains DSLs). Evitez les `do...end` dans les enchainements.
+  "flux de contrôle" et les "définitions de méthodes" (ex : dans les Rakefiles
+  et certains DSLs). Evitez les `do...end` dans les enchaînements.
 
     ```Ruby
     names = ['Bozhidar', 'Steve', 'Sarah']
@@ -479,7 +479,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
     end.map { |name| name.upcase }
     ```
 
-    Certains prétendront que les enchainements multi-lignes ont une bonne apparence en utilisant {...},
+    Certains prétendront que les enchaînements multi-lignes ont une bonne apparence en utilisant {...},
     mais ils devraient se demander - est-ce que ce code est vraiment lisible et est-ce que le contenu
     des blocs peut être extrait dans des méthodes efficaces?
 
@@ -675,8 +675,8 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
 * Utilisez le `SCREAMING_SNAKE_CASE` pour les autres constantes.
 * Le nom des méthodes qui retournent obligatoirement une valeur booléenne doit
   finir par un point d'interrogation.
-  (ex: `Array#empty?`).
-* Le nom des méthodes potentiellement "dangereuses" (ex: les méthodes qui modifient `self` ou
+  (ex : `Array#empty?`).
+* Le nom des méthodes potentiellement "dangereuses" (ex : les méthodes qui modifient `self` ou
   les arguments, `exit!` (qui n'exécute pas les finaliseurs contrairement à `exit`), etc.)
   devraient finir par un point d'exclamation (bang) s'il existe une version sécurisée de cette méthode
   *dangereuse*.
@@ -767,7 +767,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
 * Les commentaires doivent toujours être écrits en anglais pour éviter les problèmes
   liés aux caractères spéciaux.
 * La capitalisation et la ponctuation doivent être appliquées aux commentaires
-  de plus d'un mot. Utilisez [un espace](http://monsu.desiderio.free.fr/atelier/espace.html) après les virgules.
+  de plus d'un mot. Utilisez [une espace](http://monsu.desiderio.free.fr/atelier/espace.html) après les virgules.
 * Evitez les comemntaires superflus.
 
     ```Ruby
@@ -819,7 +819,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
 * Utilisez `HACK` pour signaler un code qui semble être issu de pratiques
   d'écriture douteuses qui devrait être refactorisé.
 * Utilisez `REVIEW` pour signaler toute chose devant être vérifiée pour confirmer
-  qu'elle fonctionne comme prévu. Par exemple: `REVIEW: Are we sure this is how the
+  qu'elle fonctionne comme prévu. Par exemple : `REVIEW: Are we sure this is how the
   client does X currently?`
 * Utilisez d'autres mots clés d'annotation personnalisés si vous considérez que c'est
   approprié, mais assurez-vous de les documenter dans le `README` de votre projet.
@@ -1292,7 +1292,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
 
 ## Chaînes de caractères
 
-* Privilégiez l'interpolation de chaîne plutôt que la concaténation:
+* Privilégiez l'interpolation de chaîne plutôt que la concaténation :
 
     ```Ruby
     # mauvais
@@ -1366,7 +1366,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
 > -- Jamie Zawinski
 
 * N'utilisez pas d'expression rationnelle pour une simple recherche de texte
-  en clair dans une chaîne de caractères: `string['text']`
+  en clair dans une chaîne de caractères : `string['text']`
 * Pour des situations simples, vous pouvez utiliser la regexp directement
   dans l'index de chaîne.
 
@@ -1400,7 +1400,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
     ```
 
 * Les classes de caractères comportent juste quelques caractères spéciaux
-  dont vous devez vous soucier: `^`, `-`, `\`, `]`, alors n'échappez pas
+  dont vous devez vous soucier : `^`, `-`, `\`, `]`, alors n'échappez pas
   `.` ou les crochets dans `[]`.
 
 * Faites attention avec `^` et `$` car ils correspondent aux débuts et
@@ -1482,12 +1482,12 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
 
 * Evitez la méta-programmation inutile.
 
-* Ne modifiez pas le comportement des classes du noyau lorsque vous écrivez des librairies.
+* Ne modifiez pas le comportement des classes du noyau lorsque vous écrivez des bibliothèques ou gems.
   (Ne leur appliquez pas de "monkey-patch")
 
 * La forme de bloc de `class_eval` est préférable à la form de chaîne interpolée.
   - Quand vous utilisez une chaîne interpolée, fournissez toujours `__FILE__` et `__LINE__`,
-    de sorte que vos piles d'exécution aient du sens:
+    de sorte que vos piles d'exécution aient du sens :
 
     ```ruby
     class_eval 'def use_relative_model_naming?; true; end', __FILE__, __LINE__
@@ -1497,7 +1497,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
 
 * Lorsque vous utilisez `class_eval` (ou tout autre `eval`) avec une chaîne interpolée,
   ajoutez un bloc de commentaire montrant son apparence une fois interpolée (c'est une
-  pratique que j'ai apprise dans le code source de Rails):
+  pratique que j'ai apprise dans le code source de Rails) :
 
     ```ruby
     # from activesupport/lib/active_support/core_ext/string/output_safety.rb
@@ -1521,11 +1521,11 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
   d'exécution; le comportement n'est pas listé dans `#methods`; les appels de méthodes mal
   orthographiés pourraient fonctionner sans générer d'erreur (`nukes.launch_state = false`).
   Pensez à utiliser la délégation, la procuration ou `define_method` à la place. Si vous devez
-  vraiment utiliser `method_missing`:
+  vraiment utiliser `method_missing` :
   - [Définissez également `respond_to_missing?`](http://blog.marc-andre.ca/2010/11/methodmissing-politely.html)
   - Interceptez seulement les méthodes comportant un préfixe bien défini, comme `find_by_*` -- rendez votre code aussi robuste que possible.
   - Appelez `super` à la fin de votre traitement.
-  - Déléguez vers des méthodes robustes et non-magiques:
+  - Déléguez vers des méthodes robustes et non-magiques :
 
     ```ruby
     # mauvais
