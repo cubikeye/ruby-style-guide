@@ -323,7 +323,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
 * N'utilisez jamais `when x; ...`. Voir règle précédente.
 
 * Utilisez `&&/||` pour les expressions booléennes, `and/or` pour le flux de contrôle.
-  (Règle d'or: Si vous devez mettre des parenthèses exterieures, vous utilisez les
+  (Règle d'or: Si vous devez mettre des parenthèses extérieures, vous utilisez les
   mauvais opérateurs.)
 
     ```Ruby
@@ -454,10 +454,10 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
     ```
 
 * Privilégiez `{...}` plutôt que `do...end` pour les blocs sur simple ligne.
-  Evitez l'utilisation de `{...}` pour les blocs multi-lignes (les enchainements
+  Evitez l'utilisation de `{...}` pour les blocs multi-lignes (les enchaînements
   multi-lignes sont toujours moches). Utilisez toujours `do...end` pour le
   "flux de contrôle" et les "définitions de méthodes" (ex: dans les Rakefiles
-  et certains DSLs). Evitez les `do...end` dans les enchainements.
+  et certains DSLs). Evitez les `do...end` dans les enchaînements.
 
     ```Ruby
     names = ['Bozhidar', 'Steve', 'Sarah']
@@ -497,7 +497,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
     end
     ```
 
-* Evitez `self` quand il n'est pas nécessaire. (C'est nécessaire uniquement pour appeller un accesseur d'écriture local.)
+* Evitez `self` quand il n'est pas nécessaire. (C'est nécessaire uniquement pour appeler un accesseur d'écriture local.)
 
     ```Ruby
     # mauvais
@@ -592,7 +592,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
     if (v = self.next_value) == 'hello' ...
     ```
 
-* Utilisez `||=` à vonlonté pour initialiser les variables.
+* Utilisez `||=` à volonté pour initialiser les variables.
 
     ```Ruby
     # définit Bozhidar comme nom, seulement s'il vaut nil ou false
@@ -739,7 +739,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
   `select` plutôt que `find_all`, `reduce` plutôt que `inject` et
   `size` plutôt que `length`. Ce n'est pas une exigence absolue;
   si l'utilisation de l'alias améliore la lisibilité, il est acceptable
-  de l'utiliser. Les methodes qui riment sont un héritage de Smalltalk
+  de l'utiliser. Les méthodes qui riment sont un héritage de Smalltalk
   et ne sont pas courantes dans les autres langages de programmation.
   La raison pour laquelle l'utilisation de `select` est encouragée plutôt
   que `find_all` est qu'elle fonctionne bien avec `reject` et que son nom est
@@ -768,7 +768,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
   liés aux caractères spéciaux.
 * La capitalisation et la ponctuation doivent être appliquées aux commentaires
   de plus d'un mot. Utilisez [un espace](http://monsu.desiderio.free.fr/atelier/espace.html) après les virgules.
-* Evitez les comemntaires superflus.
+* Evitez les commentaires superflus.
 
     ```Ruby
     # mauvais
@@ -881,7 +881,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
     ```
 
 * Pensez à utiliser `Struct.new`, qui définit les accesseurs triviaux,
-  constructeurs et operateurs de comparaison pour vous.
+  constructeurs et opérateurs de comparaison pour vous.
 
     ```Ruby
     # bien
@@ -975,7 +975,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
   conformément à leur utilisation attendue. Ne laissez pas tout en `public`
   (par défaut). Après tout, nous codons en *Ruby* là, pas en *Python*.
 * Indentez les méthodes `public`, `protected`, et `private` au même niveau que les
-  définitions de methodes auxquelles elles s'appliquent. Passez une ligne au dessus
+  définitions de méthodes auxquelles elles s'appliquent. Passez une ligne au dessus
   du modificateur de visibilité et une ligne en dessous de façon à accentuer le fait
   qu'il s'applique à toutes les méthodes qui le suivent.
 
@@ -1030,7 +1030,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
 
 * Signalez les exceptions en utilisant la méthode `fail`. Utilisez
   `raise` uniquement lorsque vous capturez une exception et la levez
-  à nouveau (parcequ'il ne s'agit pas d'un échec mais d'une levée
+  à nouveau (parce qu'il ne s'agit pas d'un échec mais d'une levée
   d'exception explicite et intentionnelle).
 
     ```Ruby
@@ -1145,7 +1145,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
     ```
 
 * Evitez `rescue Exception`. Cela aurait pour effet d'intercepter les
-  signaux et appels à `exit`, et nécesiterait de `kill -9` le processus.
+  signaux et appels à `exit`, et nécessiterait de `kill -9` le processus.
 
     ```Ruby
     # mauvais
@@ -1231,7 +1231,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
     ```
 
 * Privilégiez `%w` à la syntaxe littérale de création de tableau
-  quand vous avez besoin d'un tableau de chaines de caractères.
+  quand vous avez besoin d'un tableau de chaînes de caractères.
 
     ```Ruby
     # mauvais
@@ -1252,7 +1252,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
   `Set` gère une liste de valeurs non ordonnées sans doublons.
   C'est un croisement entre les capacités interopérables et intuitives
   de `Array` et la recherche rapide de `Hash`.
-* Privilégiez les symboles plutôt que les chaines de caractères pour
+* Privilégiez les symboles plutôt que les chaînes de caractères pour
   les clés de hash.
 
     ```Ruby
@@ -1552,7 +1552,7 @@ Des traductions de ce guide sont disponibles dans les langues suivantes :
 
 ## Divers
 
-* Ecrivez du code ruby sécurisé grace à `ruby -w`.
+* Ecrivez du code ruby sécurisé grâce à `ruby -w`.
 * Evitez les hashs comme paramètres optionnels. La méthode n'en ferait-elle pas trop ?
 * Evitez les méthodes de plus de 10 lignes de code (sans compter les lignes vides).
   Idéalement, la plupart des méthodes devraient faire moins de 5 lignes.
